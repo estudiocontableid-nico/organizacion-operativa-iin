@@ -641,7 +641,7 @@ export default function App() {
             <div className="dashboard-section" style={{ zIndex: 1 }}>
               <div className="section-header">
                 <div className="section-title">
-                  Tareas Críticas ({filteredData.length} registros)
+                  Tareas ({filteredData.length} registros)
                   {isEditing && <span style={{ color: 'var(--primary-color)', marginLeft: '1rem', fontSize: '0.9rem' }}>● Modo Edición Activo</span>}
                 </div>
                 {/* Vistas alternativas (Ocultas temporalmente a pedido, conservadas en código) */}
@@ -770,17 +770,17 @@ export default function App() {
                                 </td>
                               </tr>
 
-                              {/* Renglón 2: Tarea Crítica (Modo Edición) */}
+                              {/* Renglón 2: Tarea (Modo Edición) */}
                               <tr className={`task-row-content ${blockClass}`}>
                                 <td colSpan={colSpanContent}>
                                   <div className="task-field-box">
-                                    <span className="task-field-title">Tarea Crítica de Carga y Control</span>
+                                    <span className="task-field-title">Tarea</span>
                                     <textarea 
                                       className="edit-input edit-textarea"
                                       style={{ width: '100%', minHeight: '65px', boxSizing: 'border-box' }}
                                       value={getProp(item, 'Tareas Críticas de Carga y Control')}
                                       onChange={(e) => handleCellChange(item.id_key, 'Tareas Críticas de Carga y Control', e.target.value)}
-                                      placeholder="Descripción de la tarea crítica..."
+                                      placeholder="Descripción de la tarea..."
                                     />
                                   </div>
                                 </td>
@@ -790,7 +790,7 @@ export default function App() {
                               <tr className={`task-row-deliverable ${blockClass}`}>
                                 <td colSpan={colSpanContent}>
                                   <div className="task-field-box">
-                                    <span className="task-field-title">Entregable / Resultado Esperado</span>
+                                    <span className="task-field-title">Entregable</span>
                                     <input 
                                       className="edit-input" 
                                       style={{ width: '100%', boxSizing: 'border-box' }}
@@ -831,11 +831,11 @@ export default function App() {
                                 </td>
                               </tr>
 
-                              {/* Renglón 2: Tarea Crítica a todo el ancho (Modo Normal) */}
+                              {/* Renglón 2: Tarea a todo el ancho (Modo Normal) */}
                               <tr className={`task-row-content ${blockClass}`}>
                                 <td colSpan={4}>
                                   <div className="task-field-box">
-                                    <span className="task-field-title">Tarea Crítica</span>
+                                    <span className="task-field-title">Tarea</span>
                                     <div className="task-field-value">
                                       {getProp(item, 'Tareas Críticas de Carga y Control')}
                                     </div>
