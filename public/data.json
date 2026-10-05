@@ -1,0 +1,398 @@
+﻿[
+    {
+        "Período del Mes":  "Todos los Lunes",
+        "Responsable Principal":  "Nicolás",
+        "Tareas Críticas de Carga y Control":  "Seguimiento RESU ECO con Movimientos de Caja y Bancos ABACCUS",
+        "Entregable":  "Seguimiento Financiero",
+        "Desde":  "3;10;17;24",
+        "Hasta":  "3;10;17;24",
+        "Area":  "Financiero"
+    },
+    {
+        "Período del Mes":  "Todos los Lunes",
+        "Responsable Principal":  "Nicolás",
+        "Tareas Críticas de Carga y Control":  "Conciliación bancaria y carga de movimientos \"Pendiente de Imputación\" remanentes",
+        "Entregable":  "ABACCUS actualizado para imputación",
+        "Desde":  "1;8;15;22",
+        "Hasta":  "1;8;15;22",
+        "Area":  "Financiero"
+    },
+    {
+        "Período del Mes":  "Todos los Lunes",
+        "Responsable Principal":  "Asistente",
+        "Tareas Críticas de Carga y Control":  "Actualización de \"Novedades de reloj\" última semana, para posterior liquidación de sueldos mensual",
+        "Entregable":  "Novedades de sueldo actualizadas",
+        "Desde":  "1;8;15;22",
+        "Hasta":  "1;8;15;22",
+        "Area":  "Sueldos"
+    },
+    {
+        "Período del Mes":  "Todos los Lunes",
+        "Responsable Principal":  "Asistente",
+        "Tareas Críticas de Carga y Control":  "Relevamiento y corte de stock. Depósito: Sala",
+        "Entregable":  "Control de inventarios",
+        "Desde":  "1;8;15;22",
+        "Hasta":  "1;8;15;22",
+        "Area":  "Stock"
+    },
+    {
+        "Período del Mes":  "Todos los Lunes",
+        "Responsable Principal":  "Asistente",
+        "Tareas Críticas de Carga y Control":  "Relevamiento y corte de stock. Depósito: Farmacia Supervisoras",
+        "Entregable":  "Control de inventarios",
+        "Desde":  "1;8;15;22",
+        "Hasta":  "1;8;15;22",
+        "Area":  "Stock"
+    },
+    {
+        "Período del Mes":  "Todos los Lunes",
+        "Responsable Principal":  "Asistente",
+        "Tareas Críticas de Carga y Control":  "Reporte de RENALIC. Cant: a) Ptes Tratados (desagregados por HD y HDF) , b) Sesiones totales realizadas (desagregados por HD y HDF). Datos Semanales (Lunes a Domingo). Periodicidad de la información: Por Semana, Acumulados en el mes corriente, Por Mes",
+        "Entregable":  "!!! armar reporte final",
+        "Desde":  "1;8;15;22",
+        "Hasta":  "1;8;15;22",
+        "Area":  "Reportes"
+    },
+    {
+        "Período del Mes":  "Todos los Martes",
+        "Responsable Principal":  "Asistente",
+        "Tareas Críticas de Carga y Control":  "Imputación (remanente) de movimientos bancarios, conciliados por Nicolás en ABACCUS.",
+        "Entregable":  "ABACCUS actualizado",
+        "Desde":  "2;9;16;23",
+        "Hasta":  "2;9;16;23",
+        "Area":  "Financiero"
+    },
+    {
+        "Período del Mes":  "Todos los Martes",
+        "Responsable Principal":  "Asistente",
+        "Tareas Críticas de Carga y Control":  "Relevamiento y corte de stock. Depósito: Depósito Planta Baja Nico",
+        "Entregable":  "Control de inventarios",
+        "Desde":  "2;9;16;23",
+        "Hasta":  "2;9;16;23",
+        "Area":  "Stock"
+    },
+    {
+        "Período del Mes":  "Todos los Martes",
+        "Responsable Principal":  "Asistente",
+        "Tareas Críticas de Carga y Control":  "Relevamiento y corte de stock. Depósito: Deposito Auxiliar Entrada",
+        "Entregable":  "Control de inventarios",
+        "Desde":  "2;9;16;23",
+        "Hasta":  "2;9;16;23",
+        "Area":  "Stock"
+    },
+    {
+        "Período del Mes":  "Todos los Miércoles",
+        "Responsable Principal":  "Asistente",
+        "Tareas Críticas de Carga y Control":  "Relevamiento y corte de stock. Depósito: Depósito Planta Alta Mucamas",
+        "Entregable":  "Control de inventarios",
+        "Desde":  "3;10;17;24",
+        "Hasta":  "3;10;17;24",
+        "Area":  "Stock"
+    },
+    {
+        "Período del Mes":  "Todos los Miércoles",
+        "Responsable Principal":  "Asistente",
+        "Tareas Críticas de Carga y Control":  "Relevamiento y corte de stock. Depósito: Sala de Aguas Nico",
+        "Entregable":  "Control de inventarios",
+        "Desde":  "3;10;17;24",
+        "Hasta":  "3;10;17;24",
+        "Area":  "Stock"
+    },
+    {
+        "Período del Mes":  "Todos los Viernes",
+        "Responsable Principal":  "Rosana",
+        "Tareas Críticas de Carga y Control":  "RESU ECO (Resumen Económico) actualizado al cierre de la semana",
+        "Entregable":  "Seguimiento Financiero",
+        "Desde":  "5;12;19;26",
+        "Hasta":  "5;12;19;26",
+        "Area":  "Financiero"
+    },
+    {
+        "Período del Mes":  "Todos los Viernes",
+        "Responsable Principal":  "Asistente",
+        "Tareas Críticas de Carga y Control":  "Actualización de Precios unitarios de insumos por Proveedor",
+        "Entregable":  "HOY no tengo un \"entregable\" de esta tarea (o sea, un uso o destino específico para esta info), pero es algo que SEGURAMENTE nos permitirá en el futuro mejorar algún tipo de toma de desiciones.",
+        "Desde":  "5;12;19;26",
+        "Hasta":  "5;12;19;26",
+        "Area":  "Stock"
+    },
+    {
+        "Período del Mes":  "Días 01 al 02",
+        "Responsable Principal":  "Asistente",
+        "Tareas Críticas de Carga y Control":  "Actualización de ULTIMAS \"Novedades de reloj\" del mes y Liquidación preliminar de sueldos y Cargas Sociales y Sindicales",
+        "Entregable":  "Preliquidación de Sueldos y Cargas Sociales y Sindicales",
+        "Desde":  "1",
+        "Hasta":  "2",
+        "Area":  "Sueldos"
+    },
+    {
+        "Período del Mes":  "Días 01 al 02",
+        "Responsable Principal":  "Nicolás",
+        "Tareas Críticas de Carga y Control":  "Conciliación bancaria y carga de movimientos \"Pendiente de Imputación\" remanentes del mes cerrado",
+        "Entregable":  "ABACCUS actualizado para imputación final mensual",
+        "Desde":  "1",
+        "Hasta":  "2",
+        "Area":  "Financiero"
+    },
+    {
+        "Período del Mes":  "Días 03 al 04",
+        "Responsable Principal":  "Nicolás",
+        "Tareas Críticas de Carga y Control":  "Descarga de cotizaciones FCI Macro (ARS y USD). Calculo de Rentabilidad FCIs del mes cerrado",
+        "Entregable":  "ABACCUS actualizado para reportería",
+        "Desde":  "3",
+        "Hasta":  "4",
+        "Area":  "Reportes"
+    },
+    {
+        "Período del Mes":  "Días 03 al 04",
+        "Responsable Principal":  "Nicolás",
+        "Tareas Críticas de Carga y Control":  "Descargas oficiales: Cotizaciones dólar (BNA, Blue, MEP, CCL), IPC INDEC, Retenciones SICORE 217 (IIN, Sergio, Mayco), Mis Comprobantes Ventas ARCA, Anticipos Ganancias.",
+        "Entregable":  "MySQL actualizado",
+        "Desde":  "3",
+        "Hasta":  "4",
+        "Area":  "Reportes"
+    },
+    {
+        "Período del Mes":  "Días 03 al 04",
+        "Responsable Principal":  "Asistente",
+        "Tareas Críticas de Carga y Control":  "Imputación (remanente) de movimientos bancarios y cheques, conciliados por Nicolás del mes anterior en ABACCUS.",
+        "Entregable":  "Movimientos bancarios cerrados en ABACCUS.",
+        "Desde":  "3",
+        "Hasta":  "4",
+        "Area":  "Financiero"
+    },
+    {
+        "Período del Mes":  "Días 03 al 04",
+        "Responsable Principal":  "Rosana",
+        "Tareas Críticas de Carga y Control":  "Cierre de liquidación de sueldos y Cargas Sociales y Sindicales",
+        "Entregable":  "Recibos de Sueldo y Liquidaciones de Cargas Sociales y Sindicales",
+        "Desde":  "3",
+        "Hasta":  "4",
+        "Area":  "Sueldos"
+    },
+    {
+        "Período del Mes":  "Días 03 al 04",
+        "Responsable Principal":  "Asistente",
+        "Tareas Críticas de Carga y Control":  "Emisión de reportes contables: Saldos Cuentas por Cobrar y Cuentas por Pagar.",
+        "Entregable":  "Reportes de Saldos de Proveedores y Obras Sociales listos.",
+        "Desde":  "3",
+        "Hasta":  "4",
+        "Area":  "Contabilidad"
+    },
+    {
+        "Período del Mes":  "Días 03 al 04",
+        "Responsable Principal":  "Asistente",
+        "Tareas Críticas de Carga y Control":  "Actualización de \"intereses financieros\" de cuotas de Planes de Pago ARCA (*)",
+        "Entregable":  "ABACCUS actualizado para Cancelación de Cuotas",
+        "Desde":  "3",
+        "Hasta":  "4",
+        "Area":  "PFP"
+    },
+    {
+        "Período del Mes":  "Días 03 al 04",
+        "Responsable Principal":  "Asistente",
+        "Tareas Críticas de Carga y Control":  "Devengamiento Impuestos: DReI, Ingresos Brutos, IVA, 2º Quincena Ag Ret Gcias e Ingr Br.",
+        "Entregable":  "Impuestos devengados en tiempo y forma",
+        "Desde":  "3",
+        "Hasta":  "4",
+        "Area":  "Impuestos"
+    },
+    {
+        "Período del Mes":  "Días 04",
+        "Responsable Principal":  "Rosana",
+        "Tareas Críticas de Carga y Control":  "Control de Devengamiento Impuestos: DReI, Ingresos Brutos, IVA, 2º Quincena Ag Ret Gcias e Ingr Br.",
+        "Entregable":  "Impuestos devengados en tiempo y forma",
+        "Desde":  "4",
+        "Hasta":  "4",
+        "Area":  "Impuestos"
+    },
+    {
+        "Período del Mes":  "Días 05",
+        "Responsable Principal":  "Asistente",
+        "Tareas Críticas de Carga y Control":  "Envío formal de Reporte de Sueldos a Nicolás",
+        "Entregable":  "Asignación correcta de Costos Laborales en Reportería",
+        "Desde":  "5",
+        "Hasta":  "5",
+        "Area":  "Sueldos"
+    },
+    {
+        "Período del Mes":  "Días 05",
+        "Responsable Principal":  "Asistente",
+        "Tareas Críticas de Carga y Control":  "Carga en ABACCUS menú Tesorería: \"Data Entry para Balance\".\nDevengamientos: Sueldos REM + No REM, Contribuciones SS y OS, Seguros (del F931), Sindicato.\nDeudas: (actualizadas al final del mes cerrado) SUSS -F931-, Sueldos a Pagar -Netos-.",
+        "Entregable":  "ABACCUS completo y cerrado para el mes informado.",
+        "Desde":  "5",
+        "Hasta":  "5",
+        "Area":  "Sueldos"
+    },
+    {
+        "Período del Mes":  "Días 05 al 07",
+        "Responsable Principal":  "Asistente",
+        "Tareas Críticas de Carga y Control":  "Carga en ABACCUS menú Tesorería: \"Data Entry para Balance\".\nDevengamientos: DReI, Ingresos Brutos, IVA, 2º Quincena Ag Ret Gcias e Ingr Br.\nDeudas: (actualizadas al final del mes cerrado) DReI, Ingresos Brutos, IVA, 2º Quincena Ag Ret Gcias e Ingr Br, Sindicato, Anticipo de Ganancias",
+        "Entregable":  "ABACCUS completo y cerrado para el mes informado.",
+        "Desde":  "5",
+        "Hasta":  "7",
+        "Area":  "Contabilidad"
+    },
+    {
+        "Período del Mes":  "Días 08",
+        "Responsable Principal":  "Asistente",
+        "Tareas Críticas de Carga y Control":  "Relevamiento y corte de stock. Todos los depósitos (se eximen los depósitos relevados en los días 6 y 7 - últimos 2 días)",
+        "Entregable":  "Control de inventarios",
+        "Desde":  "8",
+        "Hasta":  "8",
+        "Area":  "Stock"
+    },
+    {
+        "Período del Mes":  "Días 08",
+        "Responsable Principal":  "Nicolás",
+        "Tareas Críticas de Carga y Control":  "Control de Saldo de Deuda de Anticipo del Impuesto a las Ganancias",
+        "Entregable":  "ABACCUS completo y cerrado para el mes informado.",
+        "Desde":  "8",
+        "Hasta":  "8",
+        "Area":  "Impuestos"
+    },
+    {
+        "Período del Mes":  "Días 11 al 14",
+        "Responsable Principal":  "Nicolás",
+        "Tareas Críticas de Carga y Control":  "Consolidación de BBDD MySQL / PBI / Proyección.",
+        "Entregable":  "Tableros Actualizados en Power BI",
+        "Desde":  "11",
+        "Hasta":  "14",
+        "Area":  "Reportes"
+    },
+    {
+        "Período del Mes":  "Días 11 al 14",
+        "Responsable Principal":  "Nicolás",
+        "Tareas Críticas de Carga y Control":  "Exportación del modelo (publicación)",
+        "Entregable":  "Reporte Mensual Ejecutivo.",
+        "Desde":  "11",
+        "Hasta":  "14",
+        "Area":  "Reportes"
+    },
+    {
+        "Período del Mes":  "Días 15",
+        "Responsable Principal":  "Nicolás, Mayco y Sergio",
+        "Tareas Críticas de Carga y Control":  "Reunión ejecutiva mensual (formato 15 minutos): revisión de desvíos, posición de liquidez, stock de insumos y contingencias fiscales.",
+        "Entregable":  "Decisiones tácticas y operativas del mes.",
+        "Desde":  "15",
+        "Hasta":  "15",
+        "Area":  "Reportes"
+    },
+    {
+        "Período del Mes":  "Días 16 al 17",
+        "Responsable Principal":  "Asistente",
+        "Tareas Críticas de Carga y Control":  "Devengamiento Impuestos: 1º Quincena Ag Ret Gcias e Ingr Br.",
+        "Entregable":  "Impuestos devengados en tiempo y forma",
+        "Desde":  "16",
+        "Hasta":  "17",
+        "Area":  "Impuestos"
+    },
+    {
+        "Período del Mes":  "Días 17",
+        "Responsable Principal":  "Rosana",
+        "Tareas Críticas de Carga y Control":  "Control de Devengamiento Impuestos: 1º Quincena Ag Ret Gcias e Ingr Br.",
+        "Entregable":  "Impuestos devengados en tiempo y forma",
+        "Desde":  "17",
+        "Hasta":  "17",
+        "Area":  "Impuestos"
+    },
+    {
+        "Período del Mes":  "Días 24 al 28",
+        "Responsable Principal":  "Asistente",
+        "Tareas Críticas de Carga y Control":  "Descarga de Constancias de pacientes para facturación. Guardado ordenado para facilitar el armado de los legajos digitales de pacientes.",
+        "Entregable":  "Provisión de documentación respaldatoria a Lucila para facturación. Habría que definir: a) las constancias necesarias para descargar, y b) los protocolos de almacenamiento (guardado en el disco de la compu)",
+        "Desde":  "24",
+        "Hasta":  "28",
+        "Area":  "Facturacion"
+    },
+    {
+        "Período del Mes":  "Todo el mes. Diariamente o según ocurrencia",
+        "Responsable Principal":  "Asistente",
+        "Tareas Críticas de Carga y Control":  "Carga de movimientos bancarios diarios (día anterior), y cheques emitidos y recibidos en ABACCUS.",
+        "Entregable":  "ABACCUS actualizado para conciliación",
+        "Desde":  "1",
+        "Hasta":  "31",
+        "Area":  "Financiero"
+    },
+    {
+        "Período del Mes":  "Todo el mes. Diariamente o según ocurrencia",
+        "Responsable Principal":  "Asistente",
+        "Tareas Críticas de Carga y Control":  "Cancelación de Cuotas Planes de Pago impositivos y Préstamos en ABACCUS. Avisos formales de desvíos de data entry de convenios a Nicolás.",
+        "Entregable":  "ABACCUS actualizado para conciliación y reportería",
+        "Desde":  "1",
+        "Hasta":  "31",
+        "Area":  "PFP"
+    },
+    {
+        "Período del Mes":  "Todo el mes. Diariamente o según ocurrencia",
+        "Responsable Principal":  "Asistente",
+        "Tareas Críticas de Carga y Control":  "Carga en Sistema Contable de: Facturas de Compra, Pagos a Proveedores, Liquidaciones de Cobranzas",
+        "Entregable":  "ABACCUS actualizado para reportería",
+        "Desde":  "1",
+        "Hasta":  "31",
+        "Area":  "Contabilidad"
+    },
+    {
+        "Período del Mes":  "Todo el mes. Diariamente o según ocurrencia",
+        "Responsable Principal":  "Asistente",
+        "Tareas Críticas de Carga y Control":  "Carga de nuevos planes de pago (impositivos y prestamos). Aviso formal a Nicolás",
+        "Entregable":  "ABACCUS actualizado para Cancelación de Cuotas",
+        "Desde":  "1",
+        "Hasta":  "31",
+        "Area":  "PFP"
+    },
+    {
+        "Período del Mes":  "Todo el mes. Diariamente o según ocurrencia",
+        "Responsable Principal":  "Nicolás",
+        "Tareas Críticas de Carga y Control":  "Control de Carga de nuevos planes de pago (impositivos y prestamos). Al recibir aviso formal de Asistente. Y control de cancelación de Cuotas",
+        "Entregable":  "ABACCUS actualizado para Cancelación de Cuotas",
+        "Desde":  "1",
+        "Hasta":  "31",
+        "Area":  "PFP"
+    },
+    {
+        "Período del Mes":  "Todo el mes. Diariamente o según ocurrencia",
+        "Responsable Principal":  "Asistente",
+        "Tareas Críticas de Carga y Control":  "Mantener actualizado Tablas de Proveedores y Clientes (Obras Sociales) en ABACCUS, según Tablas del Sistema Contable",
+        "Entregable":  "ABACCUS actualizado para reportería",
+        "Desde":  "1",
+        "Hasta":  "31",
+        "Area":  "Contabilidad"
+    },
+    {
+        "Período del Mes":  "Todo el mes. Diariamente o según ocurrencia",
+        "Responsable Principal":  "Lucila",
+        "Tareas Críticas de Carga y Control":  "Pedidos de Compra de Insumos",
+        "Entregable":  "ABACCUS actualizado reportería",
+        "Desde":  "1",
+        "Hasta":  "31",
+        "Area":  "Stock"
+    },
+    {
+        "Período del Mes":  "Todo el mes. Diariamente o según ocurrencia",
+        "Responsable Principal":  "Rosana",
+        "Tareas Críticas de Carga y Control":  "Informe de compras de Bienes de Uso / Obras (aviso formal a Nicolás)",
+        "Entregable":  "Información cualitativa para cuantificación (ya sea en reportes o re-parametrización de ABACCUS)",
+        "Desde":  "1",
+        "Hasta":  "31",
+        "Area":  "Reportes"
+    },
+    {
+        "Período del Mes":  "Todo el mes. Diariamente o según ocurrencia",
+        "Responsable Principal":  "Nicolás, Mayco y Sergio",
+        "Tareas Críticas de Carga y Control":  "Reunion de Destino de Fondos (según estado de cobranzas, saldos financieros y proyecciones)",
+        "Entregable":  "Decisiones financieras Sergio y Mayco",
+        "Desde":  "1",
+        "Hasta":  "31",
+        "Area":  "Reportes"
+    },
+    {
+        "Período del Mes":  "Todo el mes. Diariamente o según ocurrencia",
+        "Responsable Principal":  "???",
+        "Tareas Críticas de Carga y Control":  "Recepción de Pedidos de Compra de Insumos y CONTROL",
+        "Entregable":  "",
+        "Desde":  "1",
+        "Hasta":  "31",
+        "Area":  "Stock"
+    }
+]

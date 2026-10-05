@@ -1,0 +1,30 @@
+{
+  "header": {
+    "titleLine1": "Plan y Calendario Operativo Mensual",
+    "titleLine2": "Distribución de Tareas, Controles y Cierres en ABACCUS",
+    "titleLine3": "Instituto Integral de Nefrología S.A. (IIN)",
+    "logoDarkModeUrl": "/LogoIIN.jpeg",
+    "logoLightModeUrl": "/LogoIIN.jpeg"
+  },
+  "footer": {
+    "authorName": "CP Pablo Nicolás Demartis",
+    "whatsappPhone": "5493416177623",
+    "showExtraReference": true,
+    "extraReferenceText": "ABACCUS",
+    "extraReferenceLogoLightUrl": "https://raw.githubusercontent.com/elcibernico/ImagesLogos/main/Logos-ABACCUS/Logo-ABACCUS-con-letras-color-transparente.png",
+    "extraReferenceLogoDarkUrl": "https://raw.githubusercontent.com/elcibernico/ImagesLogos/main/Logos-ABACCUS/Logo-ABACCUS-con-letras-blanco-transparente.png"
+  },
+  "titletag": {
+    "title": "Calendario Operativo IIN",
+    "faviconLightModeUrl": "/favicon.svg",
+    "faviconDarkModeUrl": "/favicon.svg"
+  },
+  "dataSource": {
+    "csvUrl": "/Calendario_Operativo.csv",
+    "jsonFallback": "/data.json"
+  },
+  "security": {
+    "ipFilterEnabled": false,
+    "allowedIps": ["127.0.0.1", "::1"]
+  }
+}
