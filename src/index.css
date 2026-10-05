@@ -733,3 +733,33 @@ tr:hover {
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
+
+/* Filas de Edición Multi-Renglón */
+.edit-row-main td {
+  border-bottom: none !important;
+  padding-bottom: 0.35rem !important;
+  background-color: rgba(42, 100, 88, 0.04);
+}
+
+.edit-row-sub td {
+  border-top: none !important;
+  border-bottom: 2px solid var(--border-color) !important;
+  padding-top: 0.2rem !important;
+  padding-bottom: 0.85rem !important;
+  background-color: rgba(42, 100, 88, 0.04);
+}
+
+.edit-row-sub:hover td, .edit-row-main:hover td {
+  background-color: rgba(42, 100, 88, 0.08) !important;
+}
+
+.edit-section-label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--primary-color);
+  margin-bottom: 0.3rem;
+  opacity: 0.9;
+}

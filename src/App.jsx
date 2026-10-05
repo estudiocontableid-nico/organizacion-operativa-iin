@@ -659,136 +659,179 @@ export default function App() {
                   <div style={{ overflowX: 'auto' }}>
                     <table>
                       <thead>
-                        <tr>
-                          {isEditing && <th style={{ width: '50px', textAlign: 'center' }}>Acción</th>}
-                          <th onClick={() => handleHeaderClick('Area')} style={{ cursor: 'pointer', userSelect: 'none', width: '12%' }}>
-                            Área {sortColumn === 'Area' && (sortDirection === 'asc' ? '▲' : '▼')}
-                          </th>
-                          <th onClick={() => handleHeaderClick('Período del Mes')} style={{ cursor: 'pointer', userSelect: 'none', width: '15%' }}>
-                            Período {sortColumn === 'Período del Mes' && (sortDirection === 'asc' ? '▲' : '▼')}
-                          </th>
-                          <th onClick={() => handleHeaderClick('Responsable Principal')} style={{ cursor: 'pointer', userSelect: 'none', width: '15%' }}>
-                            Responsable {sortColumn === 'Responsable Principal' && (sortDirection === 'asc' ? '▲' : '▼')}
-                          </th>
-                          <th onClick={() => handleHeaderClick('Tareas Críticas de Carga y Control')} style={{ cursor: 'pointer', userSelect: 'none', width: '35%' }}>
-                            Tarea Crítica {sortColumn === 'Tareas Críticas de Carga y Control' && (sortDirection === 'asc' ? '▲' : '▼')}
-                          </th>
-                          <th onClick={() => handleHeaderClick('Entregable')} style={{ cursor: 'pointer', userSelect: 'none', width: '15%' }}>
-                            Entregable {sortColumn === 'Entregable' && (sortDirection === 'asc' ? '▲' : '▼')}
-                          </th>
-                          <th style={{ width: '8%', textAlign: 'center' }}>Días</th>
-                        </tr>
+                        {isEditing ? (
+                          <tr>
+                            <th style={{ width: '50px', textAlign: 'center' }}>Acción</th>
+                            <th style={{ width: '22%' }}>Área</th>
+                            <th style={{ width: '28%' }}>Período</th>
+                            <th style={{ width: '28%' }}>Responsable</th>
+                            <th style={{ width: '15%', textAlign: 'center' }}>Días (Desde - Hasta)</th>
+                          </tr>
+                        ) : (
+                          <tr>
+                            <th onClick={() => handleHeaderClick('Area')} style={{ cursor: 'pointer', userSelect: 'none', width: '12%' }}>
+                              Área {sortColumn === 'Area' && (sortDirection === 'asc' ? '▲' : '▼')}
+                            </th>
+                            <th onClick={() => handleHeaderClick('Período del Mes')} style={{ cursor: 'pointer', userSelect: 'none', width: '15%' }}>
+                              Período {sortColumn === 'Período del Mes' && (sortDirection === 'asc' ? '▲' : '▼')}
+                            </th>
+                            <th onClick={() => handleHeaderClick('Responsable Principal')} style={{ cursor: 'pointer', userSelect: 'none', width: '15%' }}>
+                              Responsable {sortColumn === 'Responsable Principal' && (sortDirection === 'asc' ? '▲' : '▼')}
+                            </th>
+                            <th onClick={() => handleHeaderClick('Tareas Críticas de Carga y Control')} style={{ cursor: 'pointer', userSelect: 'none', width: '35%' }}>
+                              Tarea Crítica {sortColumn === 'Tareas Críticas de Carga y Control' && (sortDirection === 'asc' ? '▲' : '▼')}
+                            </th>
+                            <th onClick={() => handleHeaderClick('Entregable')} style={{ cursor: 'pointer', userSelect: 'none', width: '15%' }}>
+                              Entregable {sortColumn === 'Entregable' && (sortDirection === 'asc' ? '▲' : '▼')}
+                            </th>
+                            <th style={{ width: '8%', textAlign: 'center' }}>Días</th>
+                          </tr>
+                        )}
                       </thead>
                       <tbody>
                         {filteredData.map((item) => (
-                          <tr key={item.id_key}>
-                            {isEditing && (
-                              <td style={{ textAlign: 'center' }}>
-                                <button 
-                                  onClick={() => handleDeleteTask(item.id_key)}
-                                  className="toggle-btn"
-                                  title="Eliminar tarea"
-                                  style={{ padding: '0.3rem', color: '#ef4444', borderColor: '#ef4444' }}
-                                >
-                                  <Trash2 size={16} />
-                                </button>
-                              </td>
-                            )}
+                          isEditing ? (
+                            <React.Fragment key={item.id_key}>
+                              {/* Renglón 1: Parámetros (Acción, Área, Período, Responsable, Días) */}
+                              <tr className="edit-row-main">
+                                <td rowSpan={2} style={{ textAlign: 'center', verticalAlign: 'top', paddingTop: '1rem' }}>
+                                  <button 
+                                    onClick={() => handleDeleteTask(item.id_key)}
+                                    className="toggle-btn"
+                                    title="Eliminar tarea"
+                                    style={{ padding: '0.4rem', color: '#ef4444', borderColor: '#ef4444' }}
+                                  >
+                                    <Trash2 size={16} />
+                                  </button>
+                                </td>
 
-                            {/* Área */}
-                            <td>
-                              {isEditing ? (
-                                <input 
-                                  className="edit-input" 
-                                  value={getProp(item, 'Area')}
-                                  onChange={(e) => handleCellChange(item.id_key, 'Area', e.target.value)}
-                                />
-                              ) : (
+                                {/* Desplegable de Área */}
+                                <td>
+                                  <span className="edit-section-label">Área</span>
+                                  <select 
+                                    className="edit-input" 
+                                    value={getProp(item, 'Area')}
+                                    onChange={(e) => handleCellChange(item.id_key, 'Area', e.target.value)}
+                                    style={{ fontWeight: 600 }}
+                                  >
+                                    {filterOptions.Area.map(a => (
+                                      <option key={a} value={a}>{a}</option>
+                                    ))}
+                                    {!filterOptions.Area.includes(getProp(item, 'Area')) && getProp(item, 'Area') && (
+                                      <option value={getProp(item, 'Area')}>{getProp(item, 'Area')}</option>
+                                    )}
+                                  </select>
+                                </td>
+
+                                {/* Período */}
+                                <td>
+                                  <span className="edit-section-label">Período</span>
+                                  <select 
+                                    className="edit-input" 
+                                    value={getProp(item, 'Período del Mes')}
+                                    onChange={(e) => handleCellChange(item.id_key, 'Período del Mes', e.target.value)}
+                                  >
+                                    {filterOptions['Período del Mes'].map(p => (
+                                      <option key={p} value={p}>{p}</option>
+                                    ))}
+                                    {!filterOptions['Período del Mes'].includes(getProp(item, 'Período del Mes')) && getProp(item, 'Período del Mes') && (
+                                      <option value={getProp(item, 'Período del Mes')}>{getProp(item, 'Período del Mes')}</option>
+                                    )}
+                                  </select>
+                                </td>
+
+                                {/* Desplegable de Responsable */}
+                                <td>
+                                  <span className="edit-section-label">Responsable</span>
+                                  <select 
+                                    className="edit-input" 
+                                    value={getProp(item, 'Responsable Principal')}
+                                    onChange={(e) => handleCellChange(item.id_key, 'Responsable Principal', e.target.value)}
+                                    style={{ fontWeight: 600 }}
+                                  >
+                                    {filterOptions['Responsable Principal'].map(r => (
+                                      <option key={r} value={r}>{r}</option>
+                                    ))}
+                                    {!filterOptions['Responsable Principal'].includes(getProp(item, 'Responsable Principal')) && getProp(item, 'Responsable Principal') && (
+                                      <option value={getProp(item, 'Responsable Principal')}>{getProp(item, 'Responsable Principal')}</option>
+                                    )}
+                                  </select>
+                                </td>
+
+                                {/* Días Desde / Hasta */}
+                                <td style={{ textAlign: 'center' }}>
+                                  <span className="edit-section-label">Días (Desde - Hasta)</span>
+                                  <div style={{ display: 'flex', gap: '0.3rem', justifyContent: 'center', alignItems: 'center' }}>
+                                    <input 
+                                      className="edit-input" 
+                                      style={{ width: '65px', textAlign: 'center' }}
+                                      value={getProp(item, 'Desde')}
+                                      onChange={(e) => handleCellChange(item.id_key, 'Desde', e.target.value)}
+                                      placeholder="Desde"
+                                    />
+                                    <span>-</span>
+                                    <input 
+                                      className="edit-input" 
+                                      style={{ width: '65px', textAlign: 'center' }}
+                                      value={getProp(item, 'Hasta')}
+                                      onChange={(e) => handleCellChange(item.id_key, 'Hasta', e.target.value)}
+                                      placeholder="Hasta"
+                                    />
+                                  </div>
+                                </td>
+                              </tr>
+
+                              {/* Renglón 2 y 3: Tarea Crítica a todo el ancho y Entregable */}
+                              <tr className="edit-row-sub">
+                                <td colSpan={4} style={{ paddingLeft: '1rem', paddingRight: '1rem' }}>
+                                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', width: '100%' }}>
+                                    <div>
+                                      <span className="edit-section-label">Tarea Crítica de Carga y Control</span>
+                                      <textarea 
+                                        className="edit-input edit-textarea"
+                                        style={{ width: '100%', minHeight: '65px', boxSizing: 'border-box' }}
+                                        value={getProp(item, 'Tareas Críticas de Carga y Control')}
+                                        onChange={(e) => handleCellChange(item.id_key, 'Tareas Críticas de Carga y Control', e.target.value)}
+                                        placeholder="Descripción de la tarea crítica..."
+                                      />
+                                    </div>
+                                    <div>
+                                      <span className="edit-section-label">Entregable / Resultado Esperado</span>
+                                      <input 
+                                        className="edit-input" 
+                                        style={{ width: '100%', boxSizing: 'border-box' }}
+                                        value={getProp(item, 'Entregable')}
+                                        onChange={(e) => handleCellChange(item.id_key, 'Entregable', e.target.value)}
+                                        placeholder="Impacto o entregable de la tarea..."
+                                      />
+                                    </div>
+                                  </div>
+                                </td>
+                              </tr>
+                            </React.Fragment>
+                          ) : (
+                            /* Modo Visualización (Tabla Estándar) */
+                            <tr key={item.id_key}>
+                              <td>
                                 <span className="badge-area">
                                   {getProp(item, 'Area')}
                                 </span>
-                              )}
-                            </td>
-
-                            {/* Período */}
-                            <td>
-                              {isEditing ? (
-                                <input 
-                                  className="edit-input" 
-                                  value={getProp(item, 'Período del Mes')}
-                                  onChange={(e) => handleCellChange(item.id_key, 'Período del Mes', e.target.value)}
-                                />
-                              ) : (
-                                getProp(item, 'Período del Mes')
-                              )}
-                            </td>
-
-                            {/* Responsable */}
-                            <td style={{ fontWeight: 600 }}>
-                              {isEditing ? (
-                                <input 
-                                  className="edit-input" 
-                                  value={getProp(item, 'Responsable Principal')}
-                                  onChange={(e) => handleCellChange(item.id_key, 'Responsable Principal', e.target.value)}
-                                />
-                              ) : (
-                                getProp(item, 'Responsable Principal')
-                              )}
-                            </td>
-
-                            {/* Tarea Crítica */}
-                            <td>
-                              {isEditing ? (
-                                <textarea 
-                                  className="edit-input edit-textarea"
-                                  value={getProp(item, 'Tareas Críticas de Carga y Control')}
-                                  onChange={(e) => handleCellChange(item.id_key, 'Tareas Críticas de Carga y Control', e.target.value)}
-                                />
-                              ) : (
+                              </td>
+                              <td>{getProp(item, 'Período del Mes')}</td>
+                              <td style={{ fontWeight: 600 }}>{getProp(item, 'Responsable Principal')}</td>
+                              <td>
                                 <div style={{ whiteSpace: 'pre-wrap', lineHeight: '1.45' }}>
                                   {getProp(item, 'Tareas Críticas de Carga y Control')}
                                 </div>
-                              )}
-                            </td>
-
-                            {/* Entregable */}
-                            <td style={{ opacity: 0.9 }}>
-                              {isEditing ? (
-                                <input 
-                                  className="edit-input" 
-                                  value={getProp(item, 'Entregable')}
-                                  onChange={(e) => handleCellChange(item.id_key, 'Entregable', e.target.value)}
-                                />
-                              ) : (
-                                getProp(item, 'Entregable')
-                              )}
-                            </td>
-
-                            {/* Días (Desde / Hasta) */}
-                            <td style={{ textAlign: 'center', whiteSpace: 'nowrap' }}>
-                              {isEditing ? (
-                                <div style={{ display: 'flex', gap: '0.2rem' }}>
-                                  <input 
-                                    className="edit-input" 
-                                    style={{ width: '45px', textAlign: 'center' }}
-                                    value={getProp(item, 'Desde')}
-                                    onChange={(e) => handleCellChange(item.id_key, 'Desde', e.target.value)}
-                                  />
-                                  <span>-</span>
-                                  <input 
-                                    className="edit-input" 
-                                    style={{ width: '45px', textAlign: 'center' }}
-                                    value={getProp(item, 'Hasta')}
-                                    onChange={(e) => handleCellChange(item.id_key, 'Hasta', e.target.value)}
-                                  />
-                                </div>
-                              ) : (
+                              </td>
+                              <td style={{ opacity: 0.9 }}>{getProp(item, 'Entregable')}</td>
+                              <td style={{ textAlign: 'center', whiteSpace: 'nowrap' }}>
                                 <span style={{ fontSize: '0.85rem', fontWeight: 500 }}>
                                   {getProp(item, 'Desde') === getProp(item, 'Hasta') ? getProp(item, 'Desde') : `${getProp(item, 'Desde')} a ${getProp(item, 'Hasta')}`}
                                 </span>
-                              )}
-                            </td>
-                          </tr>
+                              </td>
+                            </tr>
+                          )
                         ))}
                       </tbody>
                     </table>
