@@ -659,42 +659,30 @@ export default function App() {
                   <div style={{ overflowX: 'auto' }}>
                     <table>
                       <thead>
-                        {isEditing ? (
-                          <tr>
-                            <th style={{ width: '50px', textAlign: 'center' }}>Acción</th>
-                            <th style={{ width: '22%' }}>Área</th>
-                            <th style={{ width: '28%' }}>Período</th>
-                            <th style={{ width: '28%' }}>Responsable</th>
-                            <th style={{ width: '15%', textAlign: 'center' }}>Días (Desde - Hasta)</th>
-                          </tr>
-                        ) : (
-                          <tr>
-                            <th onClick={() => handleHeaderClick('Area')} style={{ cursor: 'pointer', userSelect: 'none', width: '12%' }}>
-                              Área {sortColumn === 'Area' && (sortDirection === 'asc' ? '▲' : '▼')}
-                            </th>
-                            <th onClick={() => handleHeaderClick('Período del Mes')} style={{ cursor: 'pointer', userSelect: 'none', width: '15%' }}>
-                              Período {sortColumn === 'Período del Mes' && (sortDirection === 'asc' ? '▲' : '▼')}
-                            </th>
-                            <th onClick={() => handleHeaderClick('Responsable Principal')} style={{ cursor: 'pointer', userSelect: 'none', width: '15%' }}>
-                              Responsable {sortColumn === 'Responsable Principal' && (sortDirection === 'asc' ? '▲' : '▼')}
-                            </th>
-                            <th onClick={() => handleHeaderClick('Tareas Críticas de Carga y Control')} style={{ cursor: 'pointer', userSelect: 'none', width: '35%' }}>
-                              Tarea Crítica {sortColumn === 'Tareas Críticas de Carga y Control' && (sortDirection === 'asc' ? '▲' : '▼')}
-                            </th>
-                            <th onClick={() => handleHeaderClick('Entregable')} style={{ cursor: 'pointer', userSelect: 'none', width: '15%' }}>
-                              Entregable {sortColumn === 'Entregable' && (sortDirection === 'asc' ? '▲' : '▼')}
-                            </th>
-                            <th style={{ width: '8%', textAlign: 'center' }}>Días</th>
-                          </tr>
-                        )}
+                        <tr>
+                          {isEditing && <th style={{ width: '50px', textAlign: 'center' }}>Acción</th>}
+                          <th onClick={() => handleHeaderClick('Area')} style={{ cursor: 'pointer', userSelect: 'none', width: '22%' }}>
+                            Área {sortColumn === 'Area' && (sortDirection === 'asc' ? '▲' : '▼')}
+                          </th>
+                          <th onClick={() => handleHeaderClick('Período del Mes')} style={{ cursor: 'pointer', userSelect: 'none', width: '28%' }}>
+                            Período {sortColumn === 'Período del Mes' && (sortDirection === 'asc' ? '▲' : '▼')}
+                          </th>
+                          <th onClick={() => handleHeaderClick('Responsable Principal')} style={{ cursor: 'pointer', userSelect: 'none', width: '28%' }}>
+                            Responsable {sortColumn === 'Responsable Principal' && (sortDirection === 'asc' ? '▲' : '▼')}
+                          </th>
+                          <th style={{ width: '22%', textAlign: 'center' }}>Días (Desde - Hasta)</th>
+                        </tr>
                       </thead>
                       <tbody>
-                        {filteredData.map((item) => (
-                          isEditing ? (
+                        {filteredData.map((item, index) => {
+                          const blockClass = index % 2 === 0 ? 'task-block-even' : 'task-block-odd';
+                          const colSpanContent = isEditing ? 4 : 4;
+
+                          return isEditing ? (
                             <React.Fragment key={item.id_key}>
-                              {/* Renglón 1: Parámetros (Acción, Área, Período, Responsable, Días) */}
-                              <tr className="edit-row-main">
-                                <td rowSpan={2} style={{ textAlign: 'center', verticalAlign: 'top', paddingTop: '1rem' }}>
+                              {/* Renglón 1: Parámetros (Modo Edición) */}
+                              <tr className={`task-row-params ${blockClass}`}>
+                                <td rowSpan={3} style={{ textAlign: 'center', verticalAlign: 'top', paddingTop: '1rem', width: '50px' }}>
                                   <button 
                                     onClick={() => handleDeleteTask(item.id_key)}
                                     className="toggle-btn"
@@ -705,14 +693,14 @@ export default function App() {
                                   </button>
                                 </td>
 
-                                {/* Desplegable de Área */}
+                                {/* Área (Desplegable) */}
                                 <td>
-                                  <span className="edit-section-label">Área</span>
+                                  <span className="task-field-title">Área</span>
                                   <select 
                                     className="edit-input" 
                                     value={getProp(item, 'Area')}
                                     onChange={(e) => handleCellChange(item.id_key, 'Area', e.target.value)}
-                                    style={{ fontWeight: 600 }}
+                                    style={{ fontWeight: 600, marginTop: '0.2rem' }}
                                   >
                                     {filterOptions.Area.map(a => (
                                       <option key={a} value={a}>{a}</option>
@@ -723,13 +711,14 @@ export default function App() {
                                   </select>
                                 </td>
 
-                                {/* Período */}
+                                {/* Período (Desplegable) */}
                                 <td>
-                                  <span className="edit-section-label">Período</span>
+                                  <span className="task-field-title">Período del Mes</span>
                                   <select 
                                     className="edit-input" 
                                     value={getProp(item, 'Período del Mes')}
                                     onChange={(e) => handleCellChange(item.id_key, 'Período del Mes', e.target.value)}
+                                    style={{ marginTop: '0.2rem' }}
                                   >
                                     {filterOptions['Período del Mes'].map(p => (
                                       <option key={p} value={p}>{p}</option>
@@ -740,14 +729,14 @@ export default function App() {
                                   </select>
                                 </td>
 
-                                {/* Desplegable de Responsable */}
+                                {/* Responsable (Desplegable) */}
                                 <td>
-                                  <span className="edit-section-label">Responsable</span>
+                                  <span className="task-field-title">Responsable Principal</span>
                                   <select 
                                     className="edit-input" 
                                     value={getProp(item, 'Responsable Principal')}
                                     onChange={(e) => handleCellChange(item.id_key, 'Responsable Principal', e.target.value)}
-                                    style={{ fontWeight: 600 }}
+                                    style={{ fontWeight: 600, marginTop: '0.2rem' }}
                                   >
                                     {filterOptions['Responsable Principal'].map(r => (
                                       <option key={r} value={r}>{r}</option>
@@ -758,13 +747,13 @@ export default function App() {
                                   </select>
                                 </td>
 
-                                {/* Días Desde / Hasta */}
+                                {/* Días */}
                                 <td style={{ textAlign: 'center' }}>
-                                  <span className="edit-section-label">Días (Desde - Hasta)</span>
-                                  <div style={{ display: 'flex', gap: '0.3rem', justifyContent: 'center', alignItems: 'center' }}>
+                                  <span className="task-field-title">Días</span>
+                                  <div style={{ display: 'flex', gap: '0.3rem', justifyContent: 'center', alignItems: 'center', marginTop: '0.2rem' }}>
                                     <input 
                                       className="edit-input" 
-                                      style={{ width: '65px', textAlign: 'center' }}
+                                      style={{ width: '70px', textAlign: 'center' }}
                                       value={getProp(item, 'Desde')}
                                       onChange={(e) => handleCellChange(item.id_key, 'Desde', e.target.value)}
                                       placeholder="Desde"
@@ -772,7 +761,7 @@ export default function App() {
                                     <span>-</span>
                                     <input 
                                       className="edit-input" 
-                                      style={{ width: '65px', textAlign: 'center' }}
+                                      style={{ width: '70px', textAlign: 'center' }}
                                       value={getProp(item, 'Hasta')}
                                       onChange={(e) => handleCellChange(item.id_key, 'Hasta', e.target.value)}
                                       placeholder="Hasta"
@@ -781,58 +770,93 @@ export default function App() {
                                 </td>
                               </tr>
 
-                              {/* Renglón 2 y 3: Tarea Crítica a todo el ancho y Entregable */}
-                              <tr className="edit-row-sub">
-                                <td colSpan={4} style={{ paddingLeft: '1rem', paddingRight: '1rem' }}>
-                                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', width: '100%' }}>
-                                    <div>
-                                      <span className="edit-section-label">Tarea Crítica de Carga y Control</span>
-                                      <textarea 
-                                        className="edit-input edit-textarea"
-                                        style={{ width: '100%', minHeight: '65px', boxSizing: 'border-box' }}
-                                        value={getProp(item, 'Tareas Críticas de Carga y Control')}
-                                        onChange={(e) => handleCellChange(item.id_key, 'Tareas Críticas de Carga y Control', e.target.value)}
-                                        placeholder="Descripción de la tarea crítica..."
-                                      />
-                                    </div>
-                                    <div>
-                                      <span className="edit-section-label">Entregable / Resultado Esperado</span>
-                                      <input 
-                                        className="edit-input" 
-                                        style={{ width: '100%', boxSizing: 'border-box' }}
-                                        value={getProp(item, 'Entregable')}
-                                        onChange={(e) => handleCellChange(item.id_key, 'Entregable', e.target.value)}
-                                        placeholder="Impacto o entregable de la tarea..."
-                                      />
-                                    </div>
+                              {/* Renglón 2: Tarea Crítica (Modo Edición) */}
+                              <tr className={`task-row-content ${blockClass}`}>
+                                <td colSpan={colSpanContent}>
+                                  <div className="task-field-box">
+                                    <span className="task-field-title">Tarea Crítica de Carga y Control</span>
+                                    <textarea 
+                                      className="edit-input edit-textarea"
+                                      style={{ width: '100%', minHeight: '65px', boxSizing: 'border-box' }}
+                                      value={getProp(item, 'Tareas Críticas de Carga y Control')}
+                                      onChange={(e) => handleCellChange(item.id_key, 'Tareas Críticas de Carga y Control', e.target.value)}
+                                      placeholder="Descripción de la tarea crítica..."
+                                    />
+                                  </div>
+                                </td>
+                              </tr>
+
+                              {/* Renglón 3: Entregable (Modo Edición) */}
+                              <tr className={`task-row-deliverable ${blockClass}`}>
+                                <td colSpan={colSpanContent}>
+                                  <div className="task-field-box">
+                                    <span className="task-field-title">Entregable / Resultado Esperado</span>
+                                    <input 
+                                      className="edit-input" 
+                                      style={{ width: '100%', boxSizing: 'border-box' }}
+                                      value={getProp(item, 'Entregable')}
+                                      onChange={(e) => handleCellChange(item.id_key, 'Entregable', e.target.value)}
+                                      placeholder="Impacto o entregable..."
+                                    />
                                   </div>
                                 </td>
                               </tr>
                             </React.Fragment>
                           ) : (
-                            /* Modo Visualización (Tabla Estándar) */
-                            <tr key={item.id_key}>
-                              <td>
-                                <span className="badge-area">
-                                  {getProp(item, 'Area')}
-                                </span>
-                              </td>
-                              <td>{getProp(item, 'Período del Mes')}</td>
-                              <td style={{ fontWeight: 600 }}>{getProp(item, 'Responsable Principal')}</td>
-                              <td>
-                                <div style={{ whiteSpace: 'pre-wrap', lineHeight: '1.45' }}>
-                                  {getProp(item, 'Tareas Críticas de Carga y Control')}
-                                </div>
-                              </td>
-                              <td style={{ opacity: 0.9 }}>{getProp(item, 'Entregable')}</td>
-                              <td style={{ textAlign: 'center', whiteSpace: 'nowrap' }}>
-                                <span style={{ fontSize: '0.85rem', fontWeight: 500 }}>
-                                  {getProp(item, 'Desde') === getProp(item, 'Hasta') ? getProp(item, 'Desde') : `${getProp(item, 'Desde')} a ${getProp(item, 'Hasta')}`}
-                                </span>
-                              </td>
-                            </tr>
-                          )
-                        ))}
+                            <React.Fragment key={item.id_key}>
+                              {/* Renglón 1: Parámetros (Modo Normal) */}
+                              <tr className={`task-row-params ${blockClass}`}>
+                                <td>
+                                  <span className="badge-area">
+                                    {getProp(item, 'Area')}
+                                  </span>
+                                </td>
+                                <td style={{ color: 'var(--text-color)', opacity: 0.9 }}>
+                                  {getProp(item, 'Período del Mes')}
+                                </td>
+                                <td style={{ fontWeight: 700, color: 'var(--text-color)' }}>
+                                  {getProp(item, 'Responsable Principal')}
+                                </td>
+                                <td style={{ textAlign: 'center', whiteSpace: 'nowrap' }}>
+                                  <span style={{ 
+                                    display: 'inline-block',
+                                    padding: '0.2rem 0.6rem', 
+                                    borderRadius: '4px',
+                                    backgroundColor: 'rgba(42, 100, 88, 0.1)', 
+                                    fontWeight: 600,
+                                    fontSize: '0.85rem'
+                                  }}>
+                                    {getProp(item, 'Desde') === getProp(item, 'Hasta') ? getProp(item, 'Desde') : `${getProp(item, 'Desde')} a ${getProp(item, 'Hasta')}`}
+                                  </span>
+                                </td>
+                              </tr>
+
+                              {/* Renglón 2: Tarea Crítica a todo el ancho (Modo Normal) */}
+                              <tr className={`task-row-content ${blockClass}`}>
+                                <td colSpan={4}>
+                                  <div className="task-field-box">
+                                    <span className="task-field-title">Tarea Crítica</span>
+                                    <div className="task-field-value">
+                                      {getProp(item, 'Tareas Críticas de Carga y Control')}
+                                    </div>
+                                  </div>
+                                </td>
+                              </tr>
+
+                              {/* Renglón 3: Entregable a todo el ancho (Modo Normal) */}
+                              <tr className={`task-row-deliverable ${blockClass}`}>
+                                <td colSpan={4}>
+                                  <div className="task-field-box">
+                                    <span className="task-field-title">Entregable</span>
+                                    <div className="task-field-value" style={{ opacity: 0.88, fontStyle: 'italic' }}>
+                                      {getProp(item, 'Entregable') || '—'}
+                                    </div>
+                                  </div>
+                                </td>
+                              </tr>
+                            </React.Fragment>
+                          );
+                        })}
                       </tbody>
                     </table>
                   </div>

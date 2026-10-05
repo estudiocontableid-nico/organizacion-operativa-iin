@@ -9,6 +9,9 @@
   --accent-color: #388475;
   --badge-bg: #14352f;
   --badge-text: #b6f0e4;
+  --row-bg-even: #ffffff;
+  --row-bg-odd: #edf5f3;
+  --row-hover-bg: #e2edea;
   --font-family: 'Inter', system-ui, sans-serif;
   --shadow-sm: 0 1px 2px 0 rgba(42, 100, 88, 0.05);
   --shadow-md: 0 4px 6px -1px rgba(42, 100, 88, 0.1), 0 2px 4px -1px rgba(42, 100, 88, 0.06);
@@ -27,6 +30,9 @@
   --accent-color: #62b8a7;
   --badge-bg: #0b221e;
   --badge-text: #ffffff;
+  --row-bg-even: #132421;
+  --row-bg-odd: #182e2a;
+  --row-hover-bg: #1e3833;
 }
 
 .badge-area {
@@ -734,32 +740,61 @@ tr:hover {
   letter-spacing: 0.05em;
 }
 
-/* Filas de Edición Multi-Renglón */
-.edit-row-main td {
-  border-bottom: none !important;
-  padding-bottom: 0.35rem !important;
-  background-color: rgba(42, 100, 88, 0.04);
+/* Estructura de Tabla Tipo Bloque (3 Renglones por Registro) */
+.task-block-even {
+  background-color: var(--row-bg-even);
+  transition: background-color 0.2s ease;
 }
 
-.edit-row-sub td {
+.task-block-odd {
+  background-color: var(--row-bg-odd);
+  transition: background-color 0.2s ease;
+}
+
+.task-block-even:hover,
+.task-block-odd:hover {
+  background-color: var(--row-hover-bg) !important;
+}
+
+/* Renglón 1: Parámetros */
+.task-row-params td {
+  padding: 0.85rem 1rem 0.4rem 1rem !important;
+  border-bottom: none !important;
+  border-top: 1px solid var(--border-color);
+}
+
+/* Renglón 2: Tarea Crítica */
+.task-row-content td {
+  padding: 0.3rem 1rem 0.4rem 1rem !important;
+  border-top: none !important;
+  border-bottom: none !important;
+}
+
+/* Renglón 3: Entregable */
+.task-row-deliverable td {
+  padding: 0.3rem 1rem 0.85rem 1rem !important;
   border-top: none !important;
   border-bottom: 2px solid var(--border-color) !important;
-  padding-top: 0.2rem !important;
-  padding-bottom: 0.85rem !important;
-  background-color: rgba(42, 100, 88, 0.04);
 }
 
-.edit-row-sub:hover td, .edit-row-main:hover td {
-  background-color: rgba(42, 100, 88, 0.08) !important;
+.task-field-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
 }
 
-.edit-section-label {
-  display: block;
-  font-size: 0.75rem;
+.task-field-title {
+  font-size: 0.72rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.05em;
   color: var(--primary-color);
-  margin-bottom: 0.3rem;
   opacity: 0.9;
+}
+
+.task-field-value {
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: var(--text-color);
+  white-space: pre-wrap;
 }
